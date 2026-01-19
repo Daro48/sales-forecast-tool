@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-from data_processing import load_and_clean_data
+from src.data_processing import load_and_clean_data
 
 
 def train_sales_model(df: pd.DataFrame):

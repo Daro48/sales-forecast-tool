@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
-from data_processing import load_and_clean_data
+from src.data_processing import load_and_clean_data
+
 
 df = load_and_clean_data("data/sample_sales.csv")
 
