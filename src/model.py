@@ -50,4 +50,6 @@ if __name__ == "__main__":
     )
 
     print("Next 7 days prediction:")
-    print(predictions)
+    for i, value in enumerate(predictions, start=1):
+        print(f"Day {i}: {value:.2f}")
+
