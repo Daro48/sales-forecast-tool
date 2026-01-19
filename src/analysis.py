@@ -1,14 +1,10 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+from data_processing import load_and_clean_data
 
-df = pd.read_csv("data/sample_sales.csv")
+df = load_and_clean_data("data/sample_sales.csv")
 
-df["date"] = pd.to_datetime(df["date"])
-
-print("Basic statistics: ")
+print("Basic statistics:")
 print(df["sales"].describe())
-
-df = df.sort_values("date")
 
 plt.figure()
 plt.plot(df["date"], df["sales"])
