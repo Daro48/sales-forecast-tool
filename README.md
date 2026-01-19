@@ -12,3 +12,7 @@ Analyze historical sales data and predict future sales using Python.
 - scikit-learn (planned)
 - Streamlit (planned)
 
+## Forecast Visualization
+
+![Sales Forecast](screenshots/forecast_plot.png)
+
