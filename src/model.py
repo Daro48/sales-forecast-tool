@@ -32,8 +32,12 @@ def predict_future_sales(model, last_day_index: int, days_ahead: int = 7):
     """
     Predict future sales for the next N days.
     """
-    future_days = [[last_day_index + i] for i in range(1, days_ahead + 1)]
+    future_days = pd.DataFrame({
+    "day_index": [last_day_index + i for i in range(1, days_ahead + 1)]
+})
+
     predictions = model.predict(future_days)
+
     return predictions
 
 

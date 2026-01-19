@@ -10,7 +10,7 @@ def load_and_clean_data(path: str) -> pd.DataFrame:
 
     df = df.sort_values("date")
 
-    df["sales"] = df["sales"].fillna(method="ffill")
+    df["sales"] = df["sales"].ffill()
 
     return df
 
