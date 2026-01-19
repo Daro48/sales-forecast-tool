@@ -8,5 +8,7 @@ Analyze historical sales data and predict future sales using Python.
 ## Tech Stack
 - Python
 - pandas
-- scikit-learn
-- Streamlit
+- matplotlib
+- scikit-learn (planned)
+- Streamlit (planned)
+
