@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from src.data_processing import load_and_clean_data
-from src.model import train_random_forest_model, predict_future_sales
+from src.model import train_linear_model, train_random_forest_model, predict_future_sales
 
 st.set_page_config(page_title="Sales Forecast Tool", layout="centered")
 
@@ -19,10 +19,19 @@ if uploaded_file is not None:
     st.subheader("📊 Historical Sales Data")
     st.dataframe(df)
 
-    model, score = train_random_forest_model(df)
+    lin_model, lin_score = train_linear_model(df)
+    rf_model, rf_score = train_random_forest_model(df)
 
+    st.subheader("📐 Model Comparison")
+    st.write(f"Linear Regression R²: **{lin_score:.2f}**")
+    st.write(f"Random Forest R²: **{rf_score:.2f}**")
 
-    st.write(f"**Model R² Score:** {score:.2f}")
+    st.info(
+        "Linear Regression is used for forecasting because it extrapolates trends "
+        "more reliably in time series data. Random Forest is shown for comparison."
+    )
+
+    model = lin_model
 
     days_ahead = st.slider("Days to predict", 1, 30, 7)
 
