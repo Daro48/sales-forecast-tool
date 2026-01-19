@@ -15,7 +15,6 @@ Features
 
     Interactive web app built with Streamlit
 
-
 Use Case
 
     Small businesses often have sales data but no easy way to analyze trends or forecast future demand.
@@ -42,11 +41,11 @@ Tech Stack
 
 Example Output
 
-    0	2023-01-01 00:00:00	120
-    1	2023-01-02 00:00:00	135
-    2	2023-01-03 00:00:00	128
-    3	2023-01-04 00:00:00	140
-    4	2023-01-05 00:00:00	150
+    0 2023-01-01 00:00:00 120 
+    1 2023-01-02 00:00:00 135 
+    2 2023-01-03 00:00:00 128 
+    3 2023-01-04 00:00:00 140 
+    4 2023-01-05 00:00:00 150
 
 Project Structure
     sales-forecast-tool/
@@ -69,8 +68,8 @@ How to Run Locally
     1. Install dependencies
     pip install -r requirements.txt
     2. Run analysis scripts (optional)
-    python src/analysis.py
-    python src/model.py
+    python -m src.analysis
+    python -m src.model
     3. Start the Streamlit app
     streamlit run app.py
 
@@ -86,17 +85,27 @@ Sample Data Format
     2023-01-02,135
     2023-01-03,128
 
+Model Choice
+
+    Two models are implemented and compared:
+
+    Linear Regression
+    Used as the primary forecasting model because it extrapolates trends reliably in time series data.
+
+    Random Forest Regressor
+    Included for comparison. While it performs well on historical data, it tends to flatten future predictions and is therefore less suitable for extrapolation.
+
+    This design choice reflects a practical and explainable approach to machine learning rather than blindly selecting complex models.
 
 Future Improvements
 
-    More advanced forecasting models (Random Forest, ARIMA)
+    More advanced forecasting models (ARIMA, Prophet)
 
     Confidence intervals for predictions
 
     Model persistence
 
     Deployment to Streamlit Cloud
-
 
 Author
 
